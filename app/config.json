@@ -1,5 +1,5 @@
 {
-  "serviceName": "Service name goes here",
+  "serviceName": "Place a medical device on the market",
   "useServiceNavigation": true,
   "plugins": {
     "govuk-frontend": {

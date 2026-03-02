@@ -1,0 +1,63 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Medical device regulations
+      </h1>
+<p class="govuk-body-l">The regulation of medical devices is set out in legislation.</p>
+   
+
+<p class="govuk-body">Devices are regulated under the <a href="https://www.legislation.gov.uk/uksi/2002/618/contents/made">Medical Device Regulations 2002 (as amended)</a> (UK MDR). This gives effect in UK law to the EU directives:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A01990L0385-20071011">90/385/EEC on active implantable medical devices</a></li>
+  <li><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A01993L0042-20071011">93/42/EEC on medical devices</a></li>
+  <li><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A01998L0079-20120111">98/79/EC on in vitro diagnostic medical devices</a></li>
+</ul>
+
+<h2 class="govuk-heading-m">Additional legisation that applies to medical devices</h2>
+
+<p class="govuk-body">If you are a manufacturer based in the UK and you intend to supply medical devices in Great Britain then you need to be aware of the:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="https://www.legislation.gov.uk/uksi/2005/1803/contents">General Product Safety Regulations 2005 (SI 2005 No 1803)</a></li>
+  <li><a href="https://www.legislation.gov.uk/ukpga/2021/3">Medicines and Medical Devices Act 2021 (MMD Act)</a></li>
+</ul>
+
+<p>
+Regulation 61 of the UK MDR places a duty on the Secretary of State (in practice the MHRA) to enforce the UK MDR. These enforcement duties are listed in paragraph 10 of <a href="https://www.legislation.gov.uk/ukpga/2015/15/schedule/5">Schedule 5 to the Consumer Rights Act 2015</a>, which enables the MHRA to exercise the investigatory powers (including powers of entry). These powers are also described in Schedule 5.
+</p>
+<p>
+The MMD Act introduced a set of enforcement provisions including compliance notices, suspension notices and information notices (along with a specific recall power). <a href="https://www.legislation.gov.uk/ukpga/2021/3/schedule/3">Schedule 3 of the MMD Act</a> also makes provision for a criminal offence for breaching a provision of the UK MDR. That criminal offence has not yet come into force, and until it is, section 12 of the Consumer Protection Act 1987 will continue to apply to breaches of the UK MDR, so that such breaches will continue to be a criminal offence.
+</p>
+
+
+<p>
+The General Product Safety Regulations 2005 might apply to consumer products that are also medical devices if these products are not covered by the UK MDR. If you are involved in the supply of medical devices that are intended to be used by a consumer, you need to understand your obligations under these regulations. 
+</p>
+<p>
+You can read more about the General Product Safety Regulations in our <a href="https://www.gov.uk/guidance/product-safety-advice-for-businesses">product safety advice for businesses</a>.
+</p>
+
+
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

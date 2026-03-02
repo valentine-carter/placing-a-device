@@ -1,0 +1,65 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+     
+
+      <form class="form" action="/medical-device-check-answers" method="post">
+
+        <p>
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  name: "whatType",
+  fieldset: {
+    legend: {
+      text: "What type of device is it?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "a general medical device",
+      text: "a general medical device (for example, bandages, prostheses, ECG monitors or heart valves)"
+    },
+    {
+      value: "active implantable medical device",
+      text: "an active implantable medical device (for example, cochlear implant, pacemaker, stimulator or monitoring device)"
+    },
+    {
+      value: "in vitro diagnostic device",
+      text: "an in vitro diagnostic device (for example, reagent product or calibrator)"
+    },
+    {
+      value: "none of these types",
+      text: "none of these types"
+    }
+  ]
+}) }}
+        </p>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

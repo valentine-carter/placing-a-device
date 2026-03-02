@@ -1,0 +1,104 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        
+      </h1>
+
+      <form class="form" action="/class/invasive-surgical" method="post">
+
+        <p>
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  name: "invasiveBody",
+  fieldset: {
+    legend: {
+      text: "How is your invasive device used?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "transient-use",
+      text: "For transient use",
+      hint: {
+        text: "Transient use means the device is used continuously for less than 60 minutes"
+      }
+    },
+    {
+      value: "transient-connected",
+      text: "Connected to a class I active device intended for transient use "
+    },
+    {
+      value: "short-ear-nasal",
+      text: "For short-term use in an ear canal up to the ear drum or in the nasal cavity ",
+      hint: {
+        text: "Short-term use means the device is used continuously for between 60 minutes and 30 days"
+      }
+    },
+    {
+      value: "short-oral-pharynx",
+      text: "For short-term use in the oral cavity as far as the pharynx "
+    },
+    {
+      value: "long-ear-nasal",
+      text: "For long-term use in an ear canal up to the ear drum or in the nasal cavity ",
+      hint: {
+        text: "Long-term use means the device is used continuously for more than 30 days"
+      }
+    },
+    {
+      value: "long-oral-pharynx",
+      text: "For long-term use in the oral cavity as far as the pharynx"
+    },
+    {
+      value: "long-absorbed",
+      text: "For long-term use in the ear canal, nasal or oral cavity and liable to be absorbed by the mucous membrane"
+    },
+    {
+      value: "medicine-inhalation",
+      text: "To administer medicinal products by inhalation "
+    },
+     {
+      value: "medicine-risk",
+      text: "In a way that has an essential impact on the efficacy and safety of the administered medicinal product"
+    },
+     {
+      value: "life-threatening-conditions",
+      text: "To treat life- threatening conditions "
+    },
+     {
+      value: "higher-class-device",
+      text: "Connected to a class IIa, class IIb or class III active device"
+    }
+  ]
+}) }}
+        </p>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

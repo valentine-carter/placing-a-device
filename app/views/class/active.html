@@ -1,0 +1,115 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        
+      </h1>
+
+      <form class="form" action="/class/software" method="post">
+
+        <p>
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  name: "active",
+  fieldset: {
+    legend: {
+      text: "How is your active device used?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "energy-absorbed",
+      text: "To supply energy which will be absorbed by the human body"
+    },
+    {
+      value: "energy-risk",
+      text: "To administer energy to or exchange energy with the human body in a potentially hazardous way, taking account of the nature, the density and site of application of the energy"
+    },
+    {
+      value: "energy-no-risk",
+      text: "To administer or exchange energy in a way this is not considered potentially hazardous"
+    },
+    {
+      value: "active-class2b",
+      text: "To control, monitor or directly influence the performance of an active therapeutic class IIb device"
+    },
+    {
+      value: "radiation-active",
+      text: "To emit ionizing radiation for therapeutic purposes, including devices which control or monitor such devices, or which directly influence their performance"
+    },
+    {
+      value: "active-active",
+      text: "To controlling, monitoring or directly influence the performance of active implantable devices"
+    },
+    {
+      value: "diagnosis-active",
+      text: "For diagnosis and monitoring"
+    },
+    {
+      value: "illuminate-spectrum-active",
+      text: "To illuminate the patient’s body, in the visible spectrum"
+    },
+    {
+      value: "image-in-vivo",
+      text: "To image the distribution of radiopharmaceuticals in vivo"
+    },
+    {
+      value: "diagnosis-vital-physio",
+      text: "To allow direct diagnosis or monitoring of vital physiological processes"
+    },
+    {
+      value: "monitor-physio-danger",
+      text: "For monitoring of vital physiological parameters and the nature of variations of those parameters is such that it could result in immediate danger to the patient, for example cardiac performance or respiration"
+    },
+    {
+      value: "diagnosis-danger-active",
+      text: "For diagnosis in clinical situations where the patient is in immediate danger"
+    },
+    {
+      value: "diagnosis-manage-active",
+      text: "With an integrated or incorporated diagnostic function which significantly determines the patient management by the device, such as closed loop systems or automated external defibrillators"
+    },
+    {
+      value: "admin-medicine-active",
+      text: "To administer or remove medicinal products, body liquids or other substances to or from the body in a way this is not considered potentially hazardous"
+    },
+    {
+      value: "admin-medicine-risk-active",
+      text: "To administer or remove medicinal products, body liquids or other substances to or from the body in a way that is potentially hazardous, taking account of the nature of the substances involved, of the part of the body concerned and of the mode of application"
+    },
+    {
+      value: "active-none",
+      text: "In another way"
+    }
+  ]
+}) }}
+        </p>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

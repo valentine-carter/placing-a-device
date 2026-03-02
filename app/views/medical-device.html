@@ -1,0 +1,78 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Check if you have a medical device
+      </h1>
+
+      <form class="form" action="/medical-device-type" method="post">
+
+        <p>
+          You need to decide if your product is a medical device before you go through the compliance process.</p>
+        <p> 
+          The MHRA defines medical device according to the <a href="http://www.legislation.gov.uk/uksi/2002/618/contents/made">Medical Devices Regulations 2002 (SI 2002 No 618, as amended)</a>
+        </p>
+        
+
+        <p>
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  name: "isYourDeviceUsed",
+  fieldset: {
+    legend: {
+      text: "How is your device used?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "for the diagnosis, prevention, monitoring, treatment or alleviation of disease",
+      text: "for the diagnosis, prevention, monitoring, treatment or alleviation of disease"
+    },
+    {
+      value: "for the diagnosis, monitoring, treatment, alleviation of or compensation for an injury or handicap",
+      text: "for the diagnosis, monitoring, treatment, alleviation of or compensation for an injury or handicap"
+    },
+    {
+      value: "for the investigation, replacement or modification of the anatomy or of a physiological process",
+      text: "for the investigation, replacement or modification of the anatomy or of a physiological process"
+    },
+    {
+      value: "for the control of conception",
+      text: "for the control of conception"
+    },
+    {
+      value: "for another use",
+      text: "for another use"
+    }
+  ]
+}) }}
+        </p>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

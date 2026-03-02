@@ -1,0 +1,67 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Heading or question goes here
+      </h1>
+
+      <form class="form" action="/class/implant" method="post">
+
+        <p>
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  name: "invasive",
+  fieldset: {
+    legend: {
+      text: "How is your invasive device used?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "body-orifice",
+      text: "Through a body orifice or any permanent artificial opening"
+    },
+    {
+      value: "surgery-less-thirty",
+      text: "With the aid of, or in the context of, a surgical operation for less than 30 days"
+    },
+    {
+      value: "surgery-more-thirty",
+      text: "With the aid of, or in the context of, a surgical operation for more than 30 days"
+    },
+    {
+      value: "invasive-implant",
+      text: "As an implant"
+    }
+  ]
+}) }}
+        </p>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

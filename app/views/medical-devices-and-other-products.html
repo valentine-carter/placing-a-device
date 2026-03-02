@@ -1,0 +1,103 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Medical devices and other health products
+      </h1>
+ <p class="govuk-body-l">How the MHRA makes decisions on whether a borderline product is a medical device or a medicinal product.</p>
+    
+      <p>
+        This guidance is about borderline products with general medical devices as specified in Part II of the <a href="https://www.legislation.gov.uk/uksi/2002/618/contents/made">Medical Device Regulations 2002 (as amended)</a> not borderlines with in-vitro diagnostic medical devices or active implantable medical devices.
+      </p>
+      <p class="govuk-body">Examples of the types of products that are not normally considered to be medical devices:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>baby nappies</li>
+  <li>bed pans</li>
+  <li>breast pumps</li>
+  <li>feminine hygiene products (sanitary towels, tampons)</li>
+  <li>gallipots, kidney bowls and similar holloware</li>
+  <li>insect repellents</li>
+  <li>instruments for tattooing</li>
+  <li>mattress protectors or bed sheets</li>
+  <li>tooth whitening and bleaching products</li>
+  <li>wigs and head scarves</li>
+</ul> 
+</p>
+<p class="govuk-body">Where there is a specific primary intended medical purpose, similar products may be considered to be medical devices. For example:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>bedwetting alarms for nocturnal enuresis</li>
+  <li>breast pumps for treatment of inverted nipples</li>
+  <li>external heat pads claiming pain relief</li>
+  <li>incontinence products</li>
+  <li>muscle toning products with medical claims (such as the treatment of incontinence)</li>
+</ul>
+
+
+<h2 class="govuk-heading-m">Products not considered to be medical devices</h2>
+
+<p class="govuk-body">The following items are not normally considered to be medical devices, even though they may occasionally be used within a medical environment, unless a manufacturer ascribes a specific medical purpose:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>general purpose products (for example, disinfectants or cleaners intended for multi-purpose use, sharps bins and screens)</li>
+  <li>daily living aids  and assistive technology (for example, grab rails, portable ramps and stair lifts)</li>
+  <li>personal protective equipment (for example, eye protecting equipment with no corrective function, self-rescue apparatus and sports helmets for the prevention of injury)</li>
+  <li>software that is not used for diagnosis or monitoring or is not part of a medical device (for example, patient management software or record storage systems)</li>
+  <li>accessories (for example, pouches for packaging re-sterilised medical devices, specialised water treatment devices for use with dialysis machines or sterilisers for use with medical equipment)</li>
+  <li>raw materials and component parts</li>
+</ul>
+
+<p>
+Food supplements and herbal treatments would be unlikely to be considered medical devices, even when medical claims are made. Such products are likely to come within the legislation covering medicinal products, food supplements or traditional herbal medicinal products depending upon the intended purpose for the specific product.
+</p>
+
+
+<h2 class="govuk-heading-m">Other products where specific rules may apply</h2>
+<p>There are some borderlines cases where specific rules apply depending on the particular nature of the device or product. This may include:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>spare parts and repairs</li>
+  <li>second hand and fully refurbished devices</li>
+  <li>custom made devices</li>
+  <li>procedure packs</li>
+  <li>items that need assembling or processing</li>
+</ul>
+
+
+<h2 class="govuk-heading-m">If you need more advice</h2>
+
+<p class="govuk-body">We have more guidance on borderline products:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="https://www.gov.uk/government/publications/borderlines-with-medical-devices">Medical devices and other products</a></li>
+  <li><a href="https://www.gov.uk/government/publications/borderlines-between-medical-devices-and-medicinal-products">Medical devices and medical products</a></li>
+  <li><a href="https://www.gov.uk/guidance/borderline-products-how-to-tell-if-your-product-is-a-medical-device">Classifying medical devices</a></li>
+</ul>
+
+<p>
+If you would like advice about whether your product is a medical device you can email <a href="mailto:devices.borderlines@mhra.gov.uk">devices.borderlines@mhra.gov.uk</a>. Make sure you include full details of the product, its intended purpose and how it works in your email.
+</p>
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

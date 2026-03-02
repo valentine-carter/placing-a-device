@@ -1,0 +1,75 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        
+      </h1>
+
+      <form class="form" action="/class/invasive-surgical-transient" method="post">
+
+        <p>
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  name: "invasiveSurgical",
+  fieldset: {
+    legend: {
+      text: "How is your surgically invasive device used?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "You’ll need an account to prove your identity and complete your Self Assessment"
+  },
+  items: [
+    {
+      value: "surgical-transient-use",
+      text: "For transient use",
+      hint: {
+        text: "Transient use means the device is used continuously for less than 60 minutes"
+      }
+    },
+    {
+      value: "surgical-short-use",
+      text: "For short-term use",
+      hint: {
+        text: "Short-term use means the device is used continuously for between 60 minutes and 30 days"
+      }
+    },
+    {
+      value: "surgical-long-use",
+      text: "For long-term use",
+      hint: {
+        text: "Long-term use means the device is used continuously for more than 30 days"
+      }
+    }
+  ]
+}) }}
+        </p>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

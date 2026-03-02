@@ -1,0 +1,79 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Heading or question goes here
+      </h1>
+
+      <form class="form" action="/invasive/surgical/short" method="post">
+
+        <p>
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  name: "invasiveTransient",
+  fieldset: {
+    legend: {
+      text: "How is your (transient) surgically invasive device used?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "defect-heart-ccs",
+      text: "To control, diagnose, monitor or correct a defect of the heart or of the central circulatory system through direct contact with those parts of the body"
+    },
+    {
+      value: "reuse-instrument",
+      text: "As a reusable surgical instrument"
+    },
+    {
+      value: "heart-ccs-cns",
+      text: "Specifically in direct contact with the heart or central circulatory system or the central nervous system"
+    },
+    {
+      value: "radiation-energy",
+      text: "To supply energy in the form of ionising radiation"
+    },  
+    {
+      value: "bio-absorbed",
+      text: "To have a biological effect or to be wholly or mainly absorbed"
+    },
+    {
+      value: "admin-medicine-risk",
+      text: "To administer medicinal products by means of a delivery system in a way that is potentially hazardous taking the mode of application into account"
+    },
+    {
+      value: "surgical-transient-none",
+      text: "In another way"
+    }
+  ]
+}) }}
+        </p>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

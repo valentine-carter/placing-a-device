@@ -1,0 +1,79 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        
+      </h1>
+
+      <form class="form" action="/class/start-class" method="post">
+
+        <p>
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  name: "invasiveShort",
+  fieldset: {
+    legend: {
+      text: "How is your (short-term) surgically invasive device used?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "defect-heart-css-short",
+      text: "To control, diagnose, monitor or correct a defect of the heart or of the central circulatory system through direct contact with those parts of the body"
+    },
+    {
+      value: "heart-ccs-short",
+      text: "For use in direct contact with the heart or central circulatory system or the central nervous system"
+    },
+    {
+      value: "radiation-energy-short",
+      text: "To supply energy in the form of ionizing radiation"
+    },  
+    {
+      value: "bio-absorbed-short",
+      text: "To have a biological effect or are wholly or mainly absorbed"
+    },
+    {
+      value: "chemical-short",
+      text: "To undergo chemical change in the body (except if the devices are placed in the teeth)"
+    },
+    {
+      value: "admin-medicines-short",
+      text: "To administer medicines"
+    },
+    {
+      value: "surgical-short-none",
+      text: "In another way"
+    }
+  ]
+}) }}
+        </p>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

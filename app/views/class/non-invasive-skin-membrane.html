@@ -1,0 +1,67 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        
+      </h1>
+
+      <form class="form" action="/class/non-invasive" method="post">
+
+        <p>
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  name: "skinNonInvasive",
+  fieldset: {
+    legend: {
+      text: "How is your non-invasive device (which comes into contact with injured skin or mucous membrane) used?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "mechanical",
+      text: "As a mechanical barrier, for compression or for absorption of exudates "
+    },
+    {
+      value: "injuries-secondary",
+      text: "For injuries to skin which have breached the dermis or mucous membrane and can only heal by secondary intent"
+    },
+    {
+      value: "micro-environment",
+      text: "To manage the micro-environment of injured skin or mucous membrane"
+    },
+    {
+      value: "skin-membrane-none",
+      text: "In another way "
+    }
+  ]
+}) }}
+        </p>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

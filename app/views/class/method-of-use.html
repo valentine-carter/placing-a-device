@@ -1,0 +1,67 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+       
+      </h1>
+
+      <form class="form" action="/class/special-rules" method="post">
+
+        <p>
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  name: "methodOfUse",
+  fieldset: {
+    legend: {
+      text: "Which criteria applies to your medical device?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "non-invasive-use",
+      text: "Non-invasive"
+    },
+    {
+      value: "invasive-use",
+      text: "Invasive (penetrates inside the body through the surface of the body)"
+    },
+    {
+      value: "active-use",
+      text: "Active (depends on an external energy source such as a battery, electricity or gas)"
+    },
+    {
+      value: "software-use",
+      text: "Software"
+    }
+  ]
+}) }}
+        </p>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

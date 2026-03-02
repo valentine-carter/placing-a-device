@@ -1,0 +1,75 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        
+      </h1>
+
+      <form class="form" action="/class/class-one" method="post">
+
+        <p>
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  name: "software",
+  fieldset: {
+    legend: {
+      text: "How is your software used?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "diagnosis-danger-software",
+      text: "To provide information which is used to take decisions with diagnosis or therapeutic purposes that may have an impact that could cause death or an irreversible deterioration of a person’s state of health"
+    },
+    {
+      value: "diagnosis-serious-software",
+      text: "To provide information which is used to take decisions with diagnosis or therapeutic purposes that may have an impact that could cause a serious deterioration of a person’s state of health or a surgical intervention"
+    },
+    {
+      value: "diagnosis-software",
+      text: "To provide information which is used to take decisions with diagnosis or therapeutic purposes"
+    },
+    {
+      value: "physio-danger-software",
+      text: "To monitor vital physiological parameters, where the nature of variations of those parameters could result in immediate danger to the patient"
+    },
+    {
+      value: "physio-software",
+      text: "To monitor physiological processes"
+    },
+    {
+      value: "software-none",
+      text: "In another way"
+    }
+  ]
+}) }}
+        </p>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

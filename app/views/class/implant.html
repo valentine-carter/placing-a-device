@@ -1,0 +1,95 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        
+      </h1>
+
+      <form class="form" action="/class/active" method="post">
+
+        <p>
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  name: "implant",
+  fieldset: {
+    legend: {
+      text: "How is your implantable or long-term surgically invasive device used?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "teeth",
+      text: "Placed in the teeth"
+    },
+    {
+      value: "heart-ccs-cns-implant",
+      text: "In direct contact with the heart, the central circulatory system or the central nervous system"
+    },
+    {
+      value: "bio-absorbed-implant",
+      text: "To have a biological effect or are wholly or mainly absorbed"
+    },
+    {
+      value: "chemical-not-teeth",
+      text: "To undergo chemical change in the body (except in the teeth)"
+    },
+    {
+      value: "admin-medicine-implant",
+      text: "To administer medicinal products"
+    },
+    {
+      value: "active-accessory-implant",
+      text: "As an active implantable device or an accessory to active implantable devices"
+    },
+    {
+      value: "breast-meshes",
+      text: "As a breast implants or surgical meshes"
+    },
+    {
+      value: "joint-replacement",
+      text: "As a total or partial joint replacements (not including ancillary components such as screws, wedges, plates and instruments)"
+    },
+    {
+      value: "spinal-disc-replacement",
+      text: "As a spinal disc replacement implants or an implantable device that come into contact with the spinal column (not including components such as screws, wedges, plates and instruments)"
+    },
+    {
+      value: "contraceptive-std-implant",
+      text: "For contraception or prevention of the transmission of sexually transmitted diseases"
+    },
+    {
+      value: "implant-none",
+      text: "In another way"
+    }
+  ]
+}) }}
+        </p>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

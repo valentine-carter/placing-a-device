@@ -1,0 +1,110 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Special rules
+      </h1>
+      <h2 class="govuk-body-l">
+        Some special rules apply to some medical devices which are not easily categorised according to their method of use. 
+      </h2>
+
+      <form class="form" action="/class/method-of-use" method="post">
+
+        <p>
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  name: "specialRules",
+  fieldset: {
+    legend: {
+      text: "Which statement best describes the primary use of your medical device?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "medical-product-special",
+      text: "The device includes a medicinal product (including one derived from human blood or plasma) as an integral part, which acts to support the primary use of the device"
+    },
+    {
+      value: "contraception-std-special",
+      text: "The device is used for contraception or prevention of the transmission of sexually transmitted diseases and it is not an implanted or long-term invasive device"
+    },
+    {
+      value: "contraception-implant-special",
+      text: "The device is implantable or an invasive long-term device used for contraception or prevention of the transmission of sexually transmitted diseases"
+    },
+    {
+      value: "contact-lenses",
+      text: "The device is intended specifically to be used for disinfecting, cleaning, rinsing or, where appropriate, hydrating contact lenses"
+    },
+    {
+      value: "disinfect-invasive-special",
+      text: "The device is a disinfecting solutions or washer-disinfectors intended specifically to be used for disinfecting invasive devices, as the end point of processing"
+    },
+    {
+      value: "disinfect-special",
+      text: "The device is intended specifically to be used for disinfecting or sterilising medical devices"
+    },
+    {
+      value: "tissue-no-contact",
+      text: "The device is manufactured using tissues or cells of human or animal origin, or their derivatives, which are non- viable or rendered non-viable, and it is not intended to come into contact with intact skin"
+    },
+    {
+      value: "nano-high-medium",
+      text: "The device incorporates or consists of nanomaterials and presents a high or medium potential for internal exposure"
+    },
+    {
+      value: "nano-low",
+      text: "The device incorporates or consists of nanomaterials and presents a negligible potential for internal exposure"
+    },
+    {
+      value: "substances-absorb",
+      text: "The device is composed of substances or of combinations of substances that are intended to be introduced into the human body via a body orifice or applied to the skin and that are absorbed by or locally dispersed in the human body, and these substances are systemically absorbed by the human body in order to achieve the intended purpose"
+    },
+    {
+      value: "substances-absorb-gastro",
+      text: "The device is composed of substances or of combinations of substances that are intended to be introduced into the human body via a body orifice or applied to the skin and that are absorbed by or locally dispersed in the human body, and these substances achieve their intended purpose in the stomach or lower gastrointestinal tract and are systemically absorbed by the human body"
+    },
+    {
+      value: "substance-absorb-nasal",
+      text: "The device is composed of substances or of combinations of substances that are intended to be introduced into the human body via a body orifice or applied to the skin and that are absorbed by or locally dispersed in the human body, and these substances are applied to The skin or if they are applied in the nasal or oral cavity as far as the pharynx, and achieve their intended purpose on those cavities"
+    },
+    {
+      value: "substance-absorb-local",
+      text: "The device is composed of substances or of combinations of substances that are intended to be introduced into the human body via a body orifice or applied to the skin and that are absorbed by or locally dispersed in the human body"
+    },
+    {
+      value: "special-none",
+      text: "The device is not described by any of these statements"
+    }
+  ]
+}) }}
+        </p>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,84 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">
+        Check your answers
+      </h1>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "How is your device used?"
+            },
+            value: {
+              text: data["isYourDeviceUsed"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "how is your device used"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "What type of device is it?"
+            },
+            value: {
+              text: data["whatType"]
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "what type of device is it"
+                }
+              ]
+            }
+          }
+          
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m">
+        You have a medical device
+      </h2>
+
+      <p>
+        Your device would likely meet the definition of a medical device under the regulations. 
+      </p>
+      <p>
+        Next, you need to find out what risk classification applies to your medical device.
+      </p>
+
+      <form action="/navigation" method="post" novalidate>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

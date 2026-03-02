@@ -1,0 +1,40 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Class I medical devices
+      </h1>
+
+      <p>
+        Your medical device would likely be classified as a class I medical device.</p>
+
+        <p>This means that it is low risk device with minimal potential to cause harm, such as bandages or hand-held surgical instruments.</p>
+
+        <p>Each class is subject to a different conformity assessment route and requires different documentation. Make a note of your classification so that you can find out which route you will need to follow and how to arrange your conformity assessment.</p>      
+
+      <p>
+        Read more about <a href="https://www.gov.uk/guidance/medical-devices-conformity-assessment-and-the-ukca-mark">conformity assessments</a>.
+      </p>
+      <p>
+        Find out if you need to undertake <a href="/navigation">a clinical investigation</a> before your conformity assessment.
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

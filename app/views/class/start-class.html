@@ -1,0 +1,103 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <header>
+    {{govukHeader()}}
+  </header>
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "#"
+      },
+      {
+        text: "Section",
+        href: "#"
+      },
+      {
+        text: "Subsection"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Check the class of your medical device
+      </h1>
+
+      <p>The classification of your medical device affects how it will be assessed, what documentation you require and how long it will take to get to market. Medical devices must be correctly classification to comply with the regulations.</p>
+
+      <p>
+        When identifying the class of your medical device consider the primary purpose of your medical device or which of its purposes carries the highest risk factor.
+      </p>
+      <p>You should consider:</p>
+      
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the duration of continuous use</li>
+        <li>how invasive it is</li>
+        <li>if it needs a power source</li>
+        <li>if it is implanted</li>
+        <li>if the device contains a medicinal substance</li>
+      </ul>
+
+      <p>The classification rules are defined in <a href="https://www.legislation.gov.uk/uksi/2002/618/contents">regulation 7, Part II of the Medical Device Regulations 2002</a>.</p>
+      <p>
+          You can use this service to go through the rules and find out which class may apply to your device. 
+      </p>
+
+      
+      {{ govukButton({
+        text: "Continue",
+        href: "/class/special-rules.html",
+        isStartButton: true
+      }) }}
+
+      
+
+    </div>
+<!--
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Subsection
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="#">
+                Related link
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Related link
+              </a>
+            </li>
+            <li>
+              <a href="#" class="govuk-!-font-weight-bold">
+                More <span class="govuk-visually-hidden">in Subsection</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+    -->
+  </div>
+
+{% endblock %}
