@@ -1,0 +1,97 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <header>
+    {{govukHeader()}}
+  </header>
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "/start.html"
+      },
+      {
+        text: "Placing a medical device",
+        href: "/navigation.html"
+      },
+      {
+        text: "Clinical investigations"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Find out if you need to notify us about a clinical investigation
+      </h1>
+      You may need to carry out a clinical investigation as part of the process to obtain a UKCA, CE or CE UKNI marking for your medical device. 
+
+You must inform the MHRA if you are planning to do this at least 60 days before starting your investigation.
+
+You can use this service to find out if your study meets the criteria for notification. 
+
+If you think your study may have an in house or health institution exemption you may find it helpful  to check that before continuing here. 
+
+      <p>You may need to carry out a clinical investigation as part of the process to obtain a UKCA, CE or CE UKNI marking for your medical device.</p>
+      <p>
+        You must inform the MHRA if you are planning to do this at least 60 days before starting your investigation.
+      </p>
+      <p>
+        You can use this service to find out if your study meets the criteria for notification. 
+      </p>
+
+      <p>If you think your study may have in house or health institution exemption you may find it helpful to <a href="/clinical-investigation/start-exemption.html">check using our exemption tool</a> before continuing here. </p>
+
+      {{ govukButton({
+        text: "Continue",
+        href: "/clinical-investigation/human-study.html"
+        isStartButton: true
+      }) }}
+
+    
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+<!--
+      <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Subsection
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="#">
+                Related link
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Related link
+              </a>
+            </li>
+            <li>
+              <a href="#" class="govuk-!-font-weight-bold">
+                More <span class="govuk-visually-hidden">in Subsection</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+-->
+    </div>
+  </div>
+
+{% endblock %}

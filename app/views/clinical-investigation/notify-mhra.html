@@ -1,0 +1,43 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Step 3: clinical investigations – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Notifying the MHRA about a clinical investigation
+      </h1>
+
+      <p>
+        You must notify the MHRA of your planned clinical investigation, if you plan on using a non-UKCA or non-CE marked medical device on human participants and an exemption does not apply.
+      </p>
+      <p>
+        Before devices intended for clinical investigation in Great Britain are made available to a medical practitioner for the purposes of clinical investigation, the manufacturer or UK Responsible Person (UKRP) of the device must give 60 days of prior notice to the Secretary of State for Health by writing to the MHRA.
+      </p>
+      <p>
+        The clinical investigation application form and submission checklist on IRAS help the MHRA record the applications and accompanying documentation, and manufacturers ensure that all required information is available and referenced appropriately. You can find out more about <a href="https://draft-origin.publishing.service.gov.uk/guidance/notify-mhra-about-a-clinical-investigation-for-a-medical-device">how to compile your application</a>. This includes information on what you need to include.
+      </p>
+      <p>
+        You can find out more about <a href="https://draft-origin.publishing.service.gov.uk/guidance/notify-mhra-about-a-clinical-investigation-for-a-medical-device"> how to notify us of a planned clinical investigation</a>.
+      </p>
+      <p>
+        If, within 60 days of formal acceptance of the Notice, the MHRA has not given written notice of objection, the clinical investigation may proceed. You can find out more about <a href="https://draft-origin.publishing.service.gov.uk/guidance/notify-mhra-about-a-clinical-investigation-for-a-medical-device">how we process applications</a>.
+      </p>
+    </div>
+  </div>
+
+{% endblock %}
+
+
