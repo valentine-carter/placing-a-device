@@ -1,0 +1,44 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  An exemption applies – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        An exemption applies
+      </h1>
+
+      <p>
+        It is likely that an exemption applies to your device. 
+      </p>
+      <p>
+        You must still meet the requirements, conditions and post-market obligations to place your medical device on the UK market. 
+      </p>
+
+      <p>
+        You can find out more about the <a href="https://www.gov.uk/government/publications/health-institution-exemption-for-general-medical-devices">the health institution exemption</a>.
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+
+
+
+
+ 
+

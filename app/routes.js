@@ -252,7 +252,125 @@ router.post('/class/method-of-use', function(request, response) {
 	}
 })
 
+// Step 3, do you need to notify - human study
 
+router.post('/clinical-investigation/already-marked', function(request, response) {
+
+	var humanStudy = request.session.data['humanStudy']
+	if (humanStudy == "yes"){
+		response.redirect("/clinical-investigation/already-marked")
+	} else {
+		response.redirect("/clinical-investigation/no-notification")
+	}
+}) 
+
+// Step 3, do you need to notify - already marked
+
+router.post('/clinical-investigation/same-use', function(request, response) {
+
+	var alreadyMarked = request.session.data['alreadyMarked']
+	if (alreadyMarked == "yes"){
+		response.redirect("/clinical-investigation/same-use")
+	} else {
+		response.redirect("/clinical-investigation/medical-study")
+	}
+}) 
+
+// Step 3, do you need to notify - same use
+
+router.post('/clinical-investigation/medical-study', function(request, response) {
+
+	var sameUse = request.session.data['sameUse']
+	if (sameUse == "yes"){
+		response.redirect("/clinical-investigation/no-notification")
+	} else {
+		response.redirect("/clinical-investigation/medical-study")
+	}
+}) 
+
+// Step 3, do you need to notify - medical study
+
+router.post('/clinical-investigation/has-exemption', function(request, response) {
+
+	var medicalStudy = request.session.data['medicalStudy']
+	if (medicalStudy == "yes"){
+		response.redirect("/clinical-investigation/has-exemption")
+	} else {
+		response.redirect("/clinical-investigation/no-notification")
+	}
+}) 
+
+// Step 3, do you need to notify - same use
+
+router.post('/clinical-investigation/no-notification', function(request, response) {
+
+	var hasExemption = request.session.data['hasExemption']
+	if (hasExemption == "yes"){
+		response.redirect("/clinical-investigation/no-notification")
+	} else {
+		response.redirect("/clinical-investigation/notification-required")
+	}
+}) 
+
+// Step 3, exemption - one institution
+
+router.post('/clinical-investigation/institution-does-study', function(request, response) {
+
+	var oneInstitution = request.session.data['oneInstitution']
+	if (oneInstitution == "yes"){
+		response.redirect("/clinical-investigation/institution-does-study")
+	} else {
+		response.redirect("/clinical-investigation/no-exemption")
+	}
+}) 
+
+// Step 3, exemption - institution does study
+
+router.post('/clinical-investigation/institution-involved-study', function(request, response) {
+
+	var doesStudy = request.session.data['doesStudy']
+	if (doesStudy == "yes"){
+		response.redirect("/clinical-investigation/institution-market")
+	} else {
+		response.redirect("/clinical-investigation/institution-involved-study")
+	}
+}) 
+
+// Step 3, exemption - institution involved in study
+
+router.post('/clinical-investigation/institution-repurposing', function(request, response) {
+
+	var involvedStudy = request.session.data['involvedStudy']
+	if (involvedStudy == "yes"){
+		response.redirect("/clinical-investigation/no-exemption")
+	} else {
+		response.redirect("/clinical-investigation/institution-repurposing")
+	}
+}) 
+
+// Step 3, exemption - institution repurposing
+
+router.post('/clinical-investigation/institution-market', function(request, response) {
+
+	var institutionRepurposing = request.session.data['institutionRepurposing']
+	if (institutionRepurposing == "yes"){
+		response.redirect("/clinical-investigation/no-exemption")
+	} else {
+		response.redirect("/clinical-investigation/exemption-applies")
+	}
+}) 
+
+// Step 3, exemption - institution market
+
+router.post('/clinical-investigation/exemption-applies', function(request, response) {
+
+	var institutionMarket = request.session.data['institutionMarket']
+	if (institutionMarket == "yes"){
+		response.redirect("/clinical-investigation/no-exemption")
+	} else {
+		response.redirect("/clinical-investigation/exemption-applies")
+	}
+}) 
 
 
 /* TEMPLATE
@@ -265,4 +383,6 @@ router.post('/conuntry-answer', function(request, response) {
 	} else {
 		response.redirect("/ineligible-country")
 	}
-}) */
+}) 
+	
+*/

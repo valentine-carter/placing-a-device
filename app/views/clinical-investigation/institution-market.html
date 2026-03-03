@@ -17,19 +17,19 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-      
+        
       </h1>
 
-      <form class="form" action="/clinical-investigation/same-use" method="post">
+      <form class="form" action="/clinical-investigation/exemption-applies" method="post">
 
         <p>
           {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {{ govukRadios({
-  name: "alreadyMarked",
+  name: "institutionMarket",
   fieldset: {
     legend: {
-      text: "Is the device already UKCA or CE marked as a medical device?",
+      text: "Does either the health institution or other party involved intend to place the device on the UK market?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--l"
     }

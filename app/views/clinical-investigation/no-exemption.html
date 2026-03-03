@@ -1,0 +1,43 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  No exemption – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        No exemption applies
+      </h1>
+
+      <p>
+        Your medical device does not meet the criteria for an exemption. 
+      </p>
+      <p>
+        This means that you need to notify the MHRA of your planned clinical investigation 60 days before it starts. You must also make sure that you follow the appropriate route to market to make sure you comply with the regulations. 
+      </p>
+
+      <p>
+        Find out <a href="https://www.gov.uk/guidance/regulating-medical-devices-in-the-uk">how medical devices are regulated</a>.
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+
+
+
+
+

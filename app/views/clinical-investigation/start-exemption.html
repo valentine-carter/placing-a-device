@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+  Find out if an exemption applies to your medical device – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
@@ -13,16 +13,16 @@
 {% block containerStart %}
   {{ govukBreadcrumbs({
     items: [
-      {
+       {
         text: "Home",
-        href: "#"
+        href: "/start.html"
       },
       {
-        text: "Section",
-        href: "#"
+        text: "Placing a medical device",
+        href: "/navigation.html"
       },
       {
-        text: "Subsection"
+        text: "Clinical investigations"
       }
     ]
   }) }}
@@ -34,45 +34,33 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">
-        {{ serviceName }}
+        Find out if an exemption applies to your medical device
       </h1>
 
-      <p>Use this service to:</p>
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li>do something</li>
-        <li>update your name, address or other details</li>
-        <li>do something else</li>
-      </ul>
-
-      <p>Registering takes around 5 minutes.</p>
+      <p>
+        You do not need to notify us of a clinical investigation if you have manufactured the medical device in-house for your own patients with no objective to place it on the market.</p>
+      <p>
+        However, you may need to notify the MHRA of a clinical investigation if you want to provide a medical device to another organisation, that up until now has been manufactured in-house for patients, for data to support safety and performance of a commercial product.
+      </p>
+      <p>
+        Exemptions do not apply to in-vitro diagnostic devices (IVDs).    
+      </p>
+      <p>
+        You can use this service to find out if an in house or health institution exemption applies. 
+      </p>
 
       {{ govukButton({
-        text: "Start now",
-        href: "#",
+        text: "Continue",
+        href: "/clinical-investigation/one-institution",
         isStartButton: true
       }) }}
 
-      <h2 class="govuk-heading-m">
-        Before you start
-      </h2>
-
-      <p>
-        You can also <a href="#">register by post</a>.
-      </p>
-
-      <p>
-        The online service is also <a href="#">available in Welsh (ar gael yn Gymraeg)</a>.
-      </p>
-
-      <p>
-        You can’t register for this service if you’re in the UK illegally.
-      </p>
+      
 
     </div>
 
     <div class="govuk-grid-column-one-third">
-
+<!--
       <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
         <h2 class="govuk-heading-m" id="subsection-title">
           Subsection
@@ -97,7 +85,7 @@
           </ul>
         </nav>
       </aside>
-
+-->
     </div>
   </div>
 

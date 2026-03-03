@@ -17,19 +17,19 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-      
+        
       </h1>
 
-      <form class="form" action="/clinical-investigation/same-use" method="post">
+      <form class="form" action="/clinical-investigation/institution-does-study" method="post">
 
         <p>
-          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+           {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {{ govukRadios({
-  name: "alreadyMarked",
+  name: "oneInstitution",
   fieldset: {
     legend: {
-      text: "Is the device already UKCA or CE marked as a medical device?",
+      text: "Is the study being conducted within only health institution?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--l"
     }
