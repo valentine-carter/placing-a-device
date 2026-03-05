@@ -372,6 +372,24 @@ router.post('/clinical-investigation/exemption-applies', function(request, respo
 	}
 }) 
 
+// Step 4, assessment routes
+
+router.post('/conformity-assessment/class-one-route', function(request, response) {
+
+	var deviceTypeRoute = request.session.data['deviceTypeRoute']
+	if (deviceTypeRoute == "class-one"){
+		response.redirect("/conformity-assessment/class-one-route")
+	} if (deviceTypeRoute == "class-two-a"){
+		response.redirect("/conformity-assessment/class-two-a-route")
+	} if (deviceTypeRoute == "class-two-b"){
+		response.redirect("/conformity-assessment/class-two-b-route")
+	} if (deviceTypeRoute == "class-three"){
+		response.redirect("/conformity-assessment/class-three-route")
+	} else {
+		response.redirect("/conformity-assessment/ivd-route")
+	}
+}) 
+
 
 /* TEMPLATE
 

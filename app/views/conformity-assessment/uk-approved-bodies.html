@@ -1,13 +1,30 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <header>
+    {{govukHeader()}}
+  </header>
 {% endblock %}
 
 {% block containerStart %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript:window.history.back()"
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "#"
+      },
+      {
+        text: "Section",
+        href: "#"
+      },
+      {
+        text: "Subsection"
+      }
+    ]
   }) }}
 {% endblock %}
 
@@ -16,17 +33,70 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">
-        Heading goes here
+      <h1 class="govuk-heading-xl">
+        Find a UK approved body
       </h1>
 
       <p>
-        This is a paragraph of text. It explains in more detail what has happened and wraps across several lines.
+        You need to appoint at UK approved body to conduct your conformity assessment, unless you have a non-sterile or non-measuring class I device.</p>
+      <p>
+        UK approved bodies can conduct conformity assessments in relation to the UKCA marking, for medical devices, active implantable medical devices and in vitro diagnostic medical devices under Parts II, III, and IV of the UK MDR 2002. 
+      </p>
+      <p>
+        UK approved bodies are not able to conduct conformity assessments in relation to the CE marking.
       </p>
 
-      <p>
-        Read more <a href="/path/of/page">about this topic</a>.
-      </p>
+      
+
+      <p>You can use this service to find a UK government-appointed approved body to conduct your conformity assessment.</p>
+
+      {{ govukButton({
+        text: "Start now",
+        href: "https://find-a-conformity-assessment-body.service.gov.uk",
+        isStartButton: true
+      }) }}
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Subsection
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="#">
+                Related link
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Related link
+              </a>
+            </li>
+            <li>
+              <a href="#" class="govuk-!-font-weight-bold">
+                More <span class="govuk-visually-hidden">in Subsection</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
 
     </div>
   </div>

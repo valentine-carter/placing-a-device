@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+  Conformity assessment routes – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
@@ -34,22 +34,34 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">
-        {{ serviceName }}
+        Check which conformity assessment route you need to follow
       </h1>
 
-      <p>Use this service to:</p>
+      <p>
+        Medical devices placed on the UK market must have a UKCA mark to show that the device conforms with the requirements of the <a href="https://www.legislation.gov.uk/uksi/2002/618/contents">Medical Devices Regulations 2002 (SI 2002 No 618, as amended)</a> (UK MDR 2002).</p>
+      <p>
+        You need to demonstrate that your medical device meets the requirements in the UK MDR 2002 by carrying out a conformity assessment. The assessment route depends on the classification of the device.
+      </p>
+      <p>
+        UKCA mark requirements for medical devices are based on the 3 main types of medical devices and their associated Part in the UK MDR 2002:
+      </p>
 
       <ul class="govuk-list govuk-list--bullet">
-        <li>do something</li>
-        <li>update your name, address or other details</li>
-        <li>do something else</li>
+        <li>general medical devices - Part II of the UK MDR 2002</li>
+        <li>active implantable medical devices - Part III of the UK MDR 2002</li>
+        <li>in vitro diagnostic medical devices (IVDs) - Part IV of the UK MDR 2002</li>
       </ul>
 
-      <p>Registering takes around 5 minutes.</p>
+      <p>You can place a UKCA mark on your product to show that the medical device has met the requirements when you have passed the conformity assessment.
+      </p>
+      <p>
+        This service will help you work out which assessment route you should follow. 
+      </p>
+
 
       {{ govukButton({
-        text: "Start now",
-        href: "#",
+        text: "Start",
+        href: "/conformity-assessment/device-type",
         isStartButton: true
       }) }}
 
@@ -58,21 +70,21 @@
       </h2>
 
       <p>
-        You can also <a href="#">register by post</a>.
+        You can <a href="medical-device">check which type of medical device you have</a>.
       </p>
 
       <p>
-        The online service is also <a href="#">available in Welsh (ar gael yn Gymraeg)</a>.
+        You can also <a href="class/start-class">find out which class applies to your device</a>.
       </p>
 
       <p>
-        You can’t register for this service if you’re in the UK illegally.
+        You will need this information to work out your assessment route.
       </p>
 
     </div>
 
     <div class="govuk-grid-column-one-third">
-
+<!--
       <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
         <h2 class="govuk-heading-m" id="subsection-title">
           Subsection
@@ -97,7 +109,7 @@
           </ul>
         </nav>
       </aside>
-
+-->
     </div>
   </div>
 

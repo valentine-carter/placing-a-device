@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+  Conformity assessment routes – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block containerStart %}
@@ -17,24 +17,31 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        Heading or question goes here
+        Class I conformity assessment route
       </h1>
 
-      <form class="form" action="/path/of/next/page" method="post">
-
-        <p>
-          [Insert question content here - see the
-          <a href="https://design-system.service.gov.uk">GOV.UK Design System</a>
-          for examples]
-        </p>
-
-        {{ govukButton({
-          text: "Continue"
-        }) }}
-
-      </form>
+      <p>
+        You should follow the procedure relating to the declaration of conformity set out in Annex VII of the UK MDR 2002.
+      </p>
+      <p>
+        If you are satisfied that your medical device complies with the requirements in the UK MDR 2002, you must write a statement to declare this. 
+      </p>
+      <p>
+        If your medical device is non-sterilising and non-measuring you do not need to apply to a UK approved body for approval and certification. This means that you do not need to apply section 5 in Annex VII.
+      </p>
+      <p>
+        You need to apply to an approved body (located in the UK) to approve and certify the parts of your manufacturing process that relates to sterility or metrology, if your medical device includes sterile products or a measuring function. This is set out in section 5 of Annex VII.
+      </p>
+      <p>
+        You can place a UKCA mark on the product and place it on the market when you have done this.
+      </p>
+      <p>
+        Find out about <a href="https://www.gov.uk/government/collections/guidance-on-class-1-medical-devices">Class I medical devices</a>.
+      </p>
 
     </div>
   </div>
 
 {% endblock %}
+
+

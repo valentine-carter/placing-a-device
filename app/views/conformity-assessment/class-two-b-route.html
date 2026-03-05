@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+  Conformity assessment routes – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block containerStart %}
@@ -17,24 +17,40 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        Heading or question goes here
+        Class IIb conformity assessment route
       </h1>
 
-      <form class="form" action="/path/of/next/page" method="post">
+      <p>
+        You need to declare that your Class IIb device conforms to the requirements in UK MDR 2002. 
+      </p>
+      <p>
+        You also need to apply to an approved body to carry out a conformity assessment to approve your declaration.
+      </p>
+      <p>
+        As set out in Part II of the UK MDR 2002, if your device falls into this category you must carry out either:
+      </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>an audit of full quality assurance system</li>
+        <li>a type-examination</li>
+      </ul>
+      <p>
+        If you choose to carry out a type-examination you must also follow one of these procedures:
+      </p>
+       <ul class="govuk-list govuk-list--bullet">
+        <li>an examination and testing of each product or homogenous batch of products (Annex IV)</li>
+        <li>an audit of the production quality assurance system (Annex V)</li>
+        <li>an audit of final inspection and testing (Annex V)</li>
+      </ul>
 
-        <p>
-          [Insert question content here - see the
-          <a href="https://design-system.service.gov.uk">GOV.UK Design System</a>
-          for examples]
-        </p>
-
-        {{ govukButton({
-          text: "Continue"
-        }) }}
-
-      </form>
+      <p>
+        You can place a UKCA mark on your product and place it on the market when you have received a certificate from the approved body.
+      </p>
 
     </div>
   </div>
 
 {% endblock %}
+
+
+
+
