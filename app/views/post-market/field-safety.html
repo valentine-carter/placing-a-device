@@ -1,0 +1,57 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Post-market surveillance – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Field safety notices and corrective actions
+      </h1>
+
+      <p>
+        Field safety corrective actions (FSCA) and field safety notices (FSN) are an important part of post-market surveillance as set out in the <a href="https://www.legislation.gov.uk/uksi/2024/1368/contents/made">Medical Devices (Post-market Surveillance Requirements) (Amendment) Regulations 2024</a>.
+      </p>
+      <p>
+        Manufacturers must take field safety corrective actions (FSCA) to prevent or reduce the risk of a serious incident in relation to a device which has already been placed on the market or put into service.
+      </p>
+      <h2 class="govuk-heading-m">
+        Field safety notices
+      </h2>
+      <p>
+        You should communicate details of FSCA to customers and users using a FSN. 
+      </p>
+
+      <p>
+        We publish <a href="https://www.gov.uk/drug-device-alerts">weekly lists of FSNs that affect the UK to subscribers</a>.
+      </p>
+      <p>
+        Find out <a href="https://www.gov.uk/guidance/effective-field-safety-notices-fsns-guidance-for-manufacturers-of-medical-devices">how to produce effective field safety notices</a>.
+      </p>
+      <p>
+        You can use <a href="https://mhra-gov.filecamp.com/s/d/FSN_template">the FSN template</a>to write your own.
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+
+
+ 
+
+   
+
+

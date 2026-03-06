@@ -1,0 +1,51 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Register your medical device – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Registration fees: financial year ending 31 March 2027
+      </h1>
+      <p class="govuk-body-l">
+        We have replaced the current one-off registration fee regime for the 2026/27 financial year. 
+      </p>
+
+      <p>
+        Manufacturers will be charged annually based on how many Level 2 Global Medical Devices Nomenclature  (GMDN) categories devices are registered under. 
+      </p>
+      <p>
+        If multiple GMDN® and products are registered under the one Level 2 Category, you will only be charged once per year for that Level 2 GMDN® Category. Some products fall under more than one Level 2 GMDN® Category, and these will also only be charged once per a year.
+      </p>
+      <p>
+        For registrations made within the charging period, 1 April 2026 to 31 March, 2027 the annual fee will be payable for the registration on a pro rata basis. Calculation of each  fee will be based on the Level 2 GMDN categories that their registrations fall under on 31 March 2026.
+      </p>
+      <p>
+        The estimated unit cost for the fee from 1 April 2026 will be in the region of £300 per year, per level 2 GMDN device.
+      </p>
+       <p>
+        Read more about the<a href="https://assets.publishing.service.gov.uk/media/68b5b39711b4ded2da19fce3/Fees-Consultation-Devices-Government-Response_september2025.pdf"> new fee structure </a>.
+      </p>
+
+      <p>
+        Find out about the <a href="https://www.gov.uk/government/publications/mhra-fees/current-mhra-fees">current MHRA fees.</a>.
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+

@@ -1,0 +1,70 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Register your medical device – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Help registering your medical device
+      </h1>
+
+      <p class="govuk-body-l">
+        Find out how to use the device registration service. 
+      </p>
+
+      <h2 class="govuk-heading-m">
+        The Device Registration Service (DORS)
+      </h2>
+
+     <p>You can find out how to use the DORS in our guidance:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="https://assets.publishing.service.gov.uk/media/67c9d04175d7505462fc6698/Account_Management_Reference_Guide_March_2025_Final_v1.pdf">Account Management Reference Guide March 2025</a> (PDF, 2.17 MB, 42 pages) </li>
+        <li><a href="https://assets.publishing.service.gov.uk/media/67c9d05c8247839c255ae3fe/Device_Registration_Reference_Guide_March_2025__Final_v1.pdf">Device Registration Reference Guide March 2025</a> (PDF, 6.04 MB, 101 pages) </li>
+      </ul>
+
+      <h2 class="govuk-heading-m">
+        How to register your device
+      </h2>
+
+     <p>You can find out how to register your device in our guidance:</p>
+
+     <ul class="govuk-list govuk-list--bullet">
+      <li><a href="https://mhra-gov.filecamp.com/s/6FuOxCoQTYcXFWmh/fi">register a general medical device </a></li>
+      <li><a href="https://mhra-gov.filecamp.com/s/3VRv78nkUt1j2TVE/fi">register an in vitro diagnostic (IVD) medical device</a></li>
+      <li><a href="https://mhra-gov.filecamp.com/s/VSyR0SJ6n0kFKqmY/fi">register an IVD for performance evaluation</a></li>
+      <li><a href="https://mhra-gov.filecamp.com/s/i/OkHhSTNv1S77W9IQ">register a custom-made medical device</a></li>
+      <li><a href="https://mhra-gov.filecamp.com/s/d/Y9OXiImIJZ0788Fw">register a system or procedure pack</a></li>
+     </ul>
+
+    <p>
+      If you have any questions or need more support you can email <a href="mailto:device.registrations@mhra.gov.uk">device.registrations@mhra.gov.uk, quoting your reference number</a>
+    </p>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+

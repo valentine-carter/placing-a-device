@@ -1,0 +1,126 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Register your medical device – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <header>
+    {{govukHeader()}}
+  </header>
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "/start.html"
+      },
+      {
+        text: "Placing a medical device",
+        href: "/navigation.html"
+      },
+      {
+        text: "Register your medical device"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Register your medical device
+      </h1>
+      <p>
+        All medical devices, including in vitro devices (IVDs), custom-made devices and systems or procedure packs, must be registered with the MHRA before they can be placed on the market in Great Britain (England, Wales and Scotland). You must use the MHRA Device Online Registration System (DORS).
+      </p>
+
+      <p>Use this service to:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>create an account</li>
+        <li>register your medical device</li>
+        <li>review your registration</li>
+      </ul>
+
+
+      {{ govukButton({
+        text: "Start now",
+        href: "https://mhrabpm.appiancloud.com/suite/plugins/servlet/registration",
+        isStartButton: true
+      }) }}
+
+      <h2 class="govuk-heading-m">
+        Before you start
+      </h2>
+      <p>
+        You will be asked to provide information about the manufacturer and device when you are registering your medical device.
+      </p>
+      <p>The manufacturer details should include:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>legal entity name and address as it appears on the device labelling and packaging</li>
+        <li>company type (for example, limited company, sole trader)</li>
+        <li>administrative contact (you can name up to 15 people)</li>
+        <li>a letter of designation for <a href="https://www.gov.uk/guidance/regulating-medical-devices-in-the-uk#responsible">UK Responsible Persons</a> (if applicable)</li>
+      </ul>
+      <p>The device details should include:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>which legislation applies</li>
+        <li>the class of device you are registering </li>
+        <li><a href="https://www.gmdnagency.org/">Global Medical Devices Nomenclature</a> (GMDN) code and term to describe your device</li>
+        <li>basic UDI-DI (if applicable)</li>
+        <li>medical device name (brand, trade or proprietary name)</li>
+        <li>model or version detail</li>
+        <li>catalogue or reference number</li>
+        <li>UDI-DI (if applicable)</li>
+        <li>UK Approved Body (if applicable)</li>
+        <li>attributes such as sterility, contains latex, MRI compatible</li>
+      </ul>
+      <p>
+        You also need to provide a copy of any conformity assessment certificates or self-certification conformity declarations, as applicable.
+      </p>
+
+      <p>
+        Find out more about <a href="https://www.gov.uk/guidance/register-medical-devices-to-place-on-the-market">registering a medical device to place on the UK market</a>.
+      </p>
+
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+<!---
+      <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Subsection
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="#">
+                Related link
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Related link
+              </a>
+            </li>
+            <li>
+              <a href="#" class="govuk-!-font-weight-bold">
+                More <span class="govuk-visually-hidden">in Subsection</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+-->
+    </div>
+  </div>
+
+{% endblock %}

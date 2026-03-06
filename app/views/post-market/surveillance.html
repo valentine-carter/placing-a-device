@@ -1,0 +1,51 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Post-market surveillance – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Post-market surveillance and vigilance
+      </h1>
+
+      <p>
+        Once a medical device has been placed on the UK market, the manufacturer must submit vigilance reports to the MHRA when certain incidents occur in the UK that involve their device. They must also take appropriate safety action when required. The manufacturer must ensure their device meets appropriate standards of safety and performance for as long as it is in use.
+      </p>
+      <p>
+        In 2024, the government put in place legislation to clarify and strengthen the <a href="https://www.legislation.gov.uk/uksi/2024/1368/contents/made">post-market surveillance requirements for medical devices</a> in use in Great Britain. These measures came into force on 16 June 2025 and facilitate greater traceability of incidents and trends and allow the MHRA to act swiftly when needed, supporting better risk management and containment of safety issues reducing harm.
+      </p>
+      <p>
+        Manufacturers must define a post-market surveillance plan which, as a minimum, specifies the:
+      </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>objectives of the PMS system</li>
+        <li>processes to gather information (ensuring comprehensive real-world data obtained)</li>
+        <li>methods of data analysis</li>
+        <li>methods used to demonstrate fulfilment of their vigilance reporting obligations</li>
+        <li>links to preventive and corrective action as part of a risk management process</li>
+      </ul>
+
+      <p>
+        Read more about the <a href="https://www.gov.uk/government/publications/medical-devices-post-market-surveillance-requirements">post-market surveillance requirements</a>.
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+
+
+
