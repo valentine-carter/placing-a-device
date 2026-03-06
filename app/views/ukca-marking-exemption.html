@@ -1,0 +1,45 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  UKCA marking – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block containerStart %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        UKCA marking exemptions
+      </h1>
+      <p class="govuk-body-l">
+        Find out when a UKCA marking should not be used.
+      </p>
+
+      <p>
+        You should not place a UKCA mark on your medical device if it is:
+      </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>a custom-made device – although it must still meet the requirements in the UK MDR 2002 and the type of device should be labelled clearly</li>
+        <li>undergoing a clinical investigation – it must include ‘exclusively for clinical investigation’ and meet the requirements as far as possible – you must take precautions to protect the health and safety of patients</li>
+        <li>an in vitro diagnostic medical device (IVD) for performance evaluation</li>
+        <li>a non-compliant device used in exceptional circumstances (humanitarian grounds)</li>
+      </ul>
+      <p>
+        You do not need get these checked by a third party to show they conform with the requirements but you need to draw up a statement to declare their compliance for custom-made devices, clinical investigations and performance evaluation devices.
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+
+
