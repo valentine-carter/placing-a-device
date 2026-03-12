@@ -118,15 +118,15 @@ router.post('/class/invasive/surgical-short', function(request, response) {
 
 	var invasiveTransient = request.session.data['invasiveTransient']
 	if (invasiveTransient == "defect-heart-ccs"){
-		response.redirect("/class-three")
+		response.redirect("/class/class-three")
 	} if (invasiveTransient == "reuse-instrument"){
-		response.redirect("/class-one")
+		response.redirect("/class/class-one")
 	} if (invasiveTransient == "heart-ccs-cns"){
-		response.redirect("/class-three")
+		response.redirect("/class/class-three")
 	} if (invasiveTransient == "surgical-transient-none"){
-		response.redirect("/class-two-a")
+		response.redirect("/class/class-two-a")
 	} else {
-		response.redirect("/class-two-b")
+		response.redirect("/class/class-two-b")
 	}
 })
 
@@ -136,15 +136,15 @@ router.post('/class/start-class', function(request, response) {
 
 	var invasiveShort = request.session.data['invasiveShort']
 	if (invasiveShort == "defect-heart-ccs-short"){
-		response.redirect("/class-three")
-	} if (invasiveTransient == "heart-ccs-cns-short"){
-		response.redirect("/class-three")
-	} if (invasiveTransient == "bio-absorbed-short"){
-		response.redirect("/class-three")
-	} if (invasiveTransient == "surgical-short-none"){
-		response.redirect("/class-two-a")
+		response.redirect("/class/class/class-three")
+	} if (invasiveShort == "heart-ccs-cns-short"){
+		response.redirect("/class/class-three")
+	} if (invasiveShort == "bio-absorbed-short"){
+		response.redirect("/class/class-three")
+	} if (invasiveShort == "surgical-short-none"){
+		response.redirect("/class/class-two-a")
 	} else {
-		response.redirect("/class-two-b")
+		response.redirect("/class/class-two-b")
 	}
 })
 
@@ -157,9 +157,9 @@ router.post('/class/active', function(request, response) {
 	if (implant == "teeth"){
 		response.redirect("/class/class-two-a")
 	} if (implant == "implant-none"){
-		response.redirect("/class-two-b")
+		response.redirect("/class/class-two-b")
 	} else {
-		response.redirect("/class-three")
+		response.redirect("/class/class-three")
 	}
 })
 
@@ -217,9 +217,9 @@ router.post('/class/special-rules', function(request, response) {
 	var methodOfUse = request.session.data['methodOfUse']
 	if (methodOfUse == "non-invasive-use"){
 		response.redirect("/class/non-invasive")
-	} if (country == "invasive-use"){
+	} if (methodOfUse == "invasive-use"){
 		response.redirect("/class/invasive")
-	} if (country == "active-use"){
+	} if (methodOfUse == "active-use"){
 		response.redirect("/class/active")
 	} else {
 		response.redirect("/class/software")
