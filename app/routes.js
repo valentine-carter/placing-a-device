@@ -30,6 +30,49 @@ router.post('/medical-device-check-answers', function(request, response) {
 	}
 })
 
+// Step 2, method of use
+
+router.post('/class/special-rules', function(request, response) {
+
+	var methodOfUse = request.session.data['methodOfUse']
+	if (methodOfUse == "non-invasive-use"){
+		response.redirect("/class/non-invasive")
+	} if (methodOfUse == "invasive-use"){
+		response.redirect("/class/invasive")
+	} if (methodOfUse == "active-use"){
+		response.redirect("/class/active")
+	} else {
+		response.redirect("/class/software")
+	}
+})
+
+// Step 2, special rules
+
+router.post('/class/method-of-use', function(request, response) {
+
+	var specialRules = request.session.data['specialRules']
+	if (specialRules == "contraception-std-special"){
+		response.redirect("/class/class-two-b")
+	} if (specialRules == "contact-lenses"){
+		response.redirect("/class/class-two-b")
+	} if (specialRules == "disinfect-invasive-special"){
+		response.redirect("/class/class-two-b")
+	} if (specialRules == "disinfect-special"){
+		response.redirect("/class/class-two-a")
+	} if (specialRules == "nano-low"){
+		response.redirect("/class/class-two-a")
+	} if (specialRules == "substance-absorb-nasal"){
+		response.redirect("/class/class-two-a")
+	} if (specialRules == "substance-absorb-local"){
+		response.redirect("/class/class-two-b")
+	} if (specialRules == "special-none"){
+		response.redirect("/class/method-of-use")
+	} else {
+		response.redirect("/class/class-three")
+	}
+})
+
+
 // Step 2, non-invasive devices
 
 router.post('/class/non-invasive-skin-membrane', function(request, response) {
@@ -210,21 +253,7 @@ router.post('/class/class-one', function(request, response) {
 	}
 })
 
-// Step 2, method of use
 
-router.post('/class/special-rules', function(request, response) {
-
-	var methodOfUse = request.session.data['methodOfUse']
-	if (methodOfUse == "non-invasive-use"){
-		response.redirect("/class/non-invasive")
-	} if (methodOfUse == "invasive-use"){
-		response.redirect("/class/invasive")
-	} if (methodOfUse == "active-use"){
-		response.redirect("/class/active")
-	} else {
-		response.redirect("/class/software")
-	}
-})
 
 // Step 2, special rules
 
